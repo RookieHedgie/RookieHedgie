@@ -1,7 +1,7 @@
 - 👋 Hi, I’m @RookieHedgie
 - 👀 I’m interested in Game Development
 - 🌱 I’m currently learning Unity
-- 💔 I’m not looking to collaborate now
+- 💔 I don't want to collaborate right now
 - 📫 How to reach me: https://www.linkedin.com/in/faruk-yıldırım/
 
 <!---
