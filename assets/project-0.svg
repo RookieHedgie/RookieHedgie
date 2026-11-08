@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="170" viewBox="0 0 300 170">
+<clipPath id="r"><rect width="840" height="170" rx="6"/></clipPath><g clip-path="url(#r)">
+<rect width="840" height="170" fill="#191919"/>
+<rect width="840" height="26" fill="#282828"/>
+<rect x="0" y="0" width="84" height="26" fill="#383838"/><rect x="0" y="0" width="84" height="2" fill="#3a79bb"/>
+<path d="M10 9 h5 l2 2 h7 v9 h-14 Z" fill="#d2d2d2"/>
+<text x="30" y="17" font-family="Inter, Roboto, 'Segoe UI', Helvetica, Arial, 'DejaVu Sans', sans-serif" font-size="12" font-weight="400" fill="#d2d2d2" text-anchor="start">Project</text>
+<rect x="0" y="26" width="300" height="144" fill="#383838"/>
+<text x="12" y="52" font-family="Inter, Roboto, 'Segoe UI', Helvetica, Arial, 'DejaVu Sans', sans-serif" font-size="10" font-weight="400" fill="#8f8f8f" text-anchor="start">▾</text>
+<path d="M26 43 h5 l2 2 h7 v2 h-11 l-3 7 Z" fill="#b5b5b5"/><path d="M29 47 h13 l-3 7 h-13 Z" fill="#b5b5b5" opacity="0.8"/>
+<text x="48" y="52" font-family="Inter, Roboto, 'Segoe UI', Helvetica, Arial, 'DejaVu Sans', sans-serif" font-size="12" font-weight="400" fill="#d2d2d2" text-anchor="start">Assets</text>
+<rect x="0" y="60" width="300" height="20" fill="#2c5d87"/>
+<text x="28" y="74" font-family="Inter, Roboto, 'Segoe UI', Helvetica, Arial, 'DejaVu Sans', sans-serif" font-size="10" font-weight="400" fill="#d2d2d2" text-anchor="start">▾</text>
+<path d="M42 65 h5 l2 2 h7 v2 h-11 l-3 7 Z" fill="#e6e6e6"/><path d="M45 69 h13 l-3 7 h-13 Z" fill="#e6e6e6" opacity="0.8"/>
+<text x="64" y="74" font-family="Inter, Roboto, 'Segoe UI', Helvetica, Arial, 'DejaVu Sans', sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="start">Find Me</text>
+<rect x="301" y="26" width="539" height="144" fill="#313131"/>
+<rect x="301" y="26" width="539" height="22" fill="#383838"/>
+<text x="314" y="41" font-family="Inter, Roboto, 'Segoe UI', Helvetica, Arial, 'DejaVu Sans', sans-serif" font-size="12" font-weight="400" fill="#d2d2d2" text-anchor="start">Assets  <tspan fill="#8f8f8f">›</tspan>  Find Me</text>
+<rect x="332.0" y="64.0" width="56" height="56" rx="8" fill="#0a66c2"/><g fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M357.0 80 h-7 a3 3 0 0 0 -3 3 v19 a3 3 0 0 0 3 3 h19 a3 3 0 0 0 3 -3 v-7"/><path d="M363.0 77 h12 v12"/><path d="M375.0 77 l-15 15"/></g>
+<text x="360.0" y="140" font-family="Inter, Roboto, 'Segoe UI', Helvetica, Arial, 'DejaVu Sans', sans-serif" font-size="12" font-weight="400" fill="#d2d2d2" text-anchor="middle">LinkedIn</text>
+<rect x="452.0" y="64.0" width="56" height="56" rx="8" fill="#13aff0"/><g fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M477.0 80 h-7 a3 3 0 0 0 -3 3 v19 a3 3 0 0 0 3 3 h19 a3 3 0 0 0 3 -3 v-7"/><path d="M483.0 77 h12 v12"/><path d="M495.0 77 l-15 15"/></g>
+<text x="480.0" y="140" font-family="Inter, Roboto, 'Segoe UI', Helvetica, Arial, 'DejaVu Sans', sans-serif" font-size="12" font-weight="400" fill="#d2d2d2" text-anchor="middle">ArtStation</text>
+<rect x="301" y="150" width="539" height="20" fill="#282828"/>
+<text x="314" y="164" font-family="Inter, Roboto, 'Segoe UI', Helvetica, Arial, 'DejaVu Sans', sans-serif" font-size="10" font-weight="400" fill="#8f8f8f" text-anchor="start">Assets/Find Me</text>
+<rect x="750" y="159" width="70" height="2" rx="1" fill="#5a5a5a"/><circle cx="796" cy="160" r="5" fill="#d2d2d2"/>
+<rect x="419.5" y="0" width="1" height="170" fill="#222222"/>
+<rect x="539.5" y="0" width="1" height="170" fill="#222222"/>
+</g>
+<rect x="0.5" y="0.5" width="839" height="169" rx="6" fill="none" stroke="#191919"/>
+</svg>
