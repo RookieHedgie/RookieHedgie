@@ -17,9 +17,11 @@ BAR = 22             # breadcrumb bar
 FOOT = 20            # bottom bar of the right pane
 TILE_W = 120
 
-LINKS = [  # name, accent color, url
-    ("LinkedIn", "#0a66c2", "https://www.linkedin.com/in/faruk-yıldırım/"),
-    ("ArtStation", "#13aff0", "https://www.artstation.com/rookiehedgie"),
+LOGO_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "logos")
+
+LINKS = [  # name, official logo file, url, white underlay (for knocked-out letters)
+    ("LinkedIn", "linkedin.png", "https://www.linkedin.com/in/faruk-yildirim/", True),
+    ("ArtStation", "artstation.svg", "https://www.artstation.com/rookiehedgie", False),
 ]
 
 FRAME, TABBAR, PANEL, GRIDBG = "#191919", "#282828", "#383838", "#313131"
@@ -39,19 +41,28 @@ def folder(x, y, open_=False, color="#b5b5b5"):
     return (f'<path d="M{x} {y+2} h5 l2 2 h7 v9 h-14 Z" fill="{color}"/>')
 
 
-def link_icon(cx, cy, color):
-    s = 56
-    x, y = cx - s / 2, cy - s / 2
-    # rounded asset tile in the platform color with a white "open link" glyph
-    return (f'<rect x="{x}" y="{y}" width="{s}" height="{s}" rx="8" fill="{color}"/>'
-            f'<g fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">'
-            f'<path d="M{cx-3} {cy-12} h-7 a3 3 0 0 0 -3 3 v19 a3 3 0 0 0 3 3 h19 a3 3 0 0 0 3 -3 v-7"/>'
-            f'<path d="M{cx+3} {cy-15} h12 v12"/>'
-            f'<path d="M{cx+15} {cy-15} l-15 15"/>'
-            f'</g>')
+def logo_tile(cx, cy, filename, underlay, uid):
+    """Places an official logo file, unmodified, as a 56px rounded tile.
+    The file is embedded as a data URI because an SVG shown in a README
+    cannot load images from other addresses."""
+    import base64
+    size = 56
+    x, y = cx - size / 2, cy - size / 2
+    path = os.path.join(LOGO_DIR, filename)
+    mime = "image/svg+xml" if filename.endswith(".svg") else "image/png"
+    data = base64.b64encode(open(path, "rb").read()).decode()
+    out = [f'<clipPath id="tile{uid}"><rect x="{x}" y="{y}" width="{size}" height="{size}" rx="8"/></clipPath>',
+           f'<g clip-path="url(#tile{uid})">']
+    if underlay:
+        out.append(f'<rect x="{x+3}" y="{y+3}" width="{size-6}" height="{size-6}" fill="#ffffff"/>')
+    out.append(f'<image href="data:{mime};base64,{data}" x="{x}" y="{y}" width="{size}" height="{size}" '
+               f'preserveAspectRatio="xMidYMid slice"/>')
+    out.append('</g>')
+    return "".join(out)
 
 
-def build():
+def build(tiles=None):
+    """tiles: indices of logo tiles to embed (None = all)."""
     o = []
     o.append(f'<clipPath id="r"><rect width="{W}" height="{H}" rx="6"/></clipPath><g clip-path="url(#r)">')
     o.append(f'<rect width="{W}" height="{H}" fill="{FRAME}"/>')
@@ -80,9 +91,10 @@ def build():
     o.append(f'<rect x="{SPLIT+1}" y="{TOP}" width="{W-SPLIT-1}" height="{H-TOP}" fill="{GRIDBG}"/>')
     o.append(f'<rect x="{SPLIT+1}" y="{TOP}" width="{W-SPLIT-1}" height="{BAR}" fill="{PANEL}"/>')
     o.append(t(SPLIT + 14, TOP + 15, f'Assets  <tspan fill="{MUTED}">›</tspan>  Find Me', 12))
-    for i, (name, color, _url) in enumerate(LINKS):
+    for i, (name, logo, _url, underlay) in enumerate(LINKS):
         cx = SPLIT + TILE_W * i + TILE_W / 2
-        o.append(link_icon(cx, TOP + BAR + 44, color))
+        if tiles is None or i in tiles:
+            o.append(logo_tile(cx, TOP + BAR + 44, logo, underlay, i))
         o.append(t(cx, TOP + BAR + 92, name, 12, TEXT, anchor="middle"))
     fy = H - FOOT
     o.append(f'<rect x="{SPLIT+1}" y="{fy}" width="{W-SPLIT-1}" height="{FOOT}" fill="{TABBAR}"/>')
@@ -115,10 +127,13 @@ def svg(body, x0=0, x1=W):
 if __name__ == "__main__":
     out_dir = sys.argv[1] if len(sys.argv) > 1 else "assets"
     os.makedirs(out_dir, exist_ok=True)
-    body = build()
     with open(os.path.join(out_dir, "project-full.svg"), "w", encoding="utf-8") as f:
-        f.write(svg(body))
-    for i, (a, b) in enumerate(slices()):
+        f.write(svg(build()))
+    parts = slices()
+    for i, (a, b) in enumerate(parts):
+        # each strip only embeds the logo it actually shows
+        tile = i - 1
+        body = build(tiles=[tile] if 0 <= tile < len(LINKS) else [])
         with open(os.path.join(out_dir, f"project-{i}.svg"), "w", encoding="utf-8") as f:
             f.write(svg(body, a, b))
         print(f"project-{i}.svg  x={a}-{b}  width={100*(b-a)/W:.4f}%")
