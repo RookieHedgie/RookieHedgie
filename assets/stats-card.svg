@@ -132,16 +132,16 @@
 <rect x="599.0" y="299" width="2" height="2" fill="#8f8f8f" opacity="0.5"/>
 <rect x="623.0" y="299" width="2" height="2" fill="#8f8f8f" opacity="0.5"/>
 <rect x="647.0" y="299" width="2" height="2" fill="#8f8f8f" opacity="0.5"/>
-<rect x="671.0" y="299" width="2" height="2" fill="#8f8f8f" opacity="0.5"/>
+<path d="M672.0 294 l6 6 l-6 6 l-6 -6 Z" fill="#d2d2d2" stroke="#191919" stroke-width="1"/>
 <path d="M696.0 294 l6 6 l-6 6 l-6 -6 Z" fill="#d2d2d2" stroke="#191919" stroke-width="1"/>
 <path d="M720.0 294 l6 6 l-6 6 l-6 -6 Z" fill="#d2d2d2" stroke="#191919" stroke-width="1"/>
 <path d="M744.0 294 l6 6 l-6 6 l-6 -6 Z" fill="#d2d2d2" stroke="#191919" stroke-width="1"/>
 <path d="M768.0 294 l6 6 l-6 6 l-6 -6 Z" fill="#d2d2d2" stroke="#191919" stroke-width="1"/>
 <path d="M792.0 294 l6 6 l-6 6 l-6 -6 Z" fill="#d2d2d2" stroke="#191919" stroke-width="1"/>
-<path d="M816.0 294 l6 6 l-6 6 l-6 -6 Z" fill="#d2d2d2" stroke="#191919" stroke-width="1"/>
+<rect x="815.0" y="299" width="2" height="2" fill="#8f8f8f" opacity="0.5"/>
 <line x1="816" y1="280" x2="816" y2="320" stroke="#e0401f" stroke-width="1.5"/>
 <rect x="0" y="320" width="840" height="20" fill="#282828"/>
-<text x="12" y="334" font-family="Inter, Roboto, 'Segoe UI', Helvetica, Arial, 'DejaVu Sans', sans-serif" font-size="10" font-weight="400" fill="#8f8f8f" text-anchor="start" >updated 12 Nov 2026 · 22:58 GMT+3</text>
+<text x="12" y="334" font-family="Inter, Roboto, 'Segoe UI', Helvetica, Arial, 'DejaVu Sans', sans-serif" font-size="10" font-weight="400" fill="#8f8f8f" text-anchor="start" >updated 13 Nov 2026 · 09:50 GMT+3</text>
 </g>
 <rect x="0.5" y="0.5" width="839" height="339" rx="6" fill="none" stroke="#191919"/>
 </svg>
